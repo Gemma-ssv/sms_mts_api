@@ -8,22 +8,26 @@ from config import LOGIN_MTS, PASSW_MTS, ALPHA_NAME
 from sms_mts import Sms
 from utils import input_phone_number, print_sierpinski
 
+def main():
+    """Основная функция запуска."""
+    # Создание объекта Sms
+    SMS = Sms(LOGIN_MTS, PASSW_MTS)  
 
-# Создание объекта Sms
-SMS = Sms(LOGIN_MTS, PASSW_MTS)  
+    # Вводим номер телефона
+    PHONE_NUMBER: str = input_phone_number()
 
-# Вводим номер телефона
-PHONE_NUMBER: str = input_phone_number()
+    # Вводим текст для смс
+    TEXT: str = input("Введите текст сообщения, который следует отправить:")
 
-# Вводим текст для смс
-TEXT: str = input("Введите текст сообщения, который следует отправить:")
+    try:
+        # Отправка смс пользователю
+        SMS.send(ALPHA_NAME, PHONE_NUMBER, TEXT)
+    except Exception as e:
+        # Вывод ошибки
+        print(e)
+    finally:
+        print("Удачи в подключении!")
+        print_sierpinski(4)
 
-try:
-    # Отправка смс пользователю
-    SMS.send(ALPHA_NAME, PHONE_NUMBER, TEXT)
-except Exception as e:
-    # Вывод ошибки
-    print(e)
-finally:
-    print("Удачи в подключении!")
-    print_sierpinski(4)
+if __name__ == "__main__":
+    main()
