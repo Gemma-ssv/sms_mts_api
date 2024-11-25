@@ -31,10 +31,10 @@
    Создайте файл `.env` в корне проекта и добавьте в него следующие переменные:
 
    ```env
-   ALPHA_NAME=TEST
-   LOGIN_MTS=TEST
-   PASSW_MTS=TEST
-   ID_MTS=TEST
+   ALPHA_NAME=Альфа-имя от МТС
+   LOGIN_MTS=Логин от МТС для связи с API
+   PASSW_MTS=Пароль для связи с API МТС
+   ID_MTS= Идентификатор для связи с API МТС, вставляется в ссылку
    ```
 
    Замените значения на реальные данные для доступа к API MTS Communicator.
